@@ -23,16 +23,16 @@ local logo = {
 }
 
 local neovim = {
-    "  ███▄    █ ▓█████  ▒█████   ██▒   █▓ ██▓ ███▄ ▄███▓",
-    "  ██ ▀█   █ ▓█   ▀ ▒██▒  ██▒▓██░   █▒▓██▒▓██▒▀█▀ ██▒",
-    " ▓██  ▀█ ██▒▒███   ▒██░  ██▒ ▓██  █▒░▒██▒▓██    ▓██░",
-    " ▓██▒  ▐▌██▒▒▓█  ▄ ▒██   ██░  ▒██ █░░░██░▒██    ▒██ ",
-    " ▒██░   ▓██░░▒████▒░ ████▓▒░   ▒▀█░  ░██░▒██▒   ░██▒",
-    " ░ ▒░   ▒ ▒ ░░ ▒░ ░░ ▒░▒░▒░    ░ ▐░  ░▓  ░ ▒░   ░  ░",
-    " ░ ░░   ░ ▒░ ░ ░  ░  ░ ▒ ▒░    ░ ░░   ▒ ░░  ░      ░",
-    "    ░   ░ ░    ░   ░ ░ ░ ▒       ░░   ▒ ░░      ░   ",
-    "          ░    ░  ░    ░ ░        ░   ░         ░   ",
-    "                                 ░                  ",
+    " ███▄    █ ▓█████  ▒█████   ██▒   █▓ ██▓ ███▄ ▄███▓",
+    " ██ ▀█   █ ▓█   ▀ ▒██▒  ██▒▓██░   █▒▓██▒▓██▒▀█▀ ██▒",
+    "▓██  ▀█ ██▒▒███   ▒██░  ██▒ ▓██  █▒░▒██▒▓██    ▓██░",
+    "▓██▒  ▐▌██▒▒▓█  ▄ ▒██   ██░  ▒██ █░░░██░▒██    ▒██ ",
+    "▒██░   ▓██░░▒████▒░ ████▓▒░   ▒▀█░  ░██░▒██▒   ░██▒",
+    "░ ▒░   ▒ ▒ ░░ ▒░ ░░ ▒░▒░▒░    ░ ▐░  ░▓  ░ ▒░   ░  ░",
+    "░ ░░   ░ ▒░ ░ ░  ░  ░ ▒ ▒░    ░ ░░   ▒ ░░  ░      ░",
+    "   ░   ░ ░    ░   ░ ░ ░ ▒       ░░   ▒ ░░      ░   ",
+    "         ░    ░  ░    ░ ░        ░   ░         ░   ",
+    "                                ░                  ",
 }
 
 local function set_default_config()
@@ -118,8 +118,8 @@ local function banner(on_vimenter)
     end
     -- padding left of banner text
     for _, value in ipairs(neovim) do
-        local offset_width = string.len(neovim[1])
-        local line = string.rep(" ", width / 2 - 24) .. value
+        local offset_width = string.len(neovim[1]) / 2
+        local line = string.rep(" ", width / 2 - 26) .. value
         vim.list_extend(text, { line })
     end
     vim.api.nvim_buf_set_lines(buffer, 0, -1, false, text)
